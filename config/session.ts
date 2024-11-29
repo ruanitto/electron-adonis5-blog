@@ -6,9 +6,20 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import { SessionConfig } from '@ioc:Adonis/Addons/Session'
+import { sessionConfig } from '@adonisjs/session/build/config'
 
-const sessionConfig: SessionConfig = {
+export default sessionConfig({
+  /*
+  |--------------------------------------------------------------------------
+  | Enable/Disable sessions
+  |--------------------------------------------------------------------------
+  |
+  | Setting the following property to "false" will disable the session for the
+  | entire application
+  |
+  */
+  enabled: true,
+
   /*
   |--------------------------------------------------------------------------
   | Driver
@@ -101,6 +112,4 @@ const sessionConfig: SessionConfig = {
   |
   */
   redisConnection: 'session',
-}
-
-export default sessionConfig
+})

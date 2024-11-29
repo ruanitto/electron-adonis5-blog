@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdonisJS - A Modern Web Framework For Node.js</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: white;
+    }
+  </style>
 </head>
+
 <body>
   <a href="/">Home</a> | <a href="{{ route('PostsController.create') }}">Create Post</a>
   @!section('page')
   <script>
-    const {dialog} = require('electron').remote;
+    const { dialog } = require('electron').remote;
     document.querySelector('#selectBtn').addEventListener('click', function (event) {
-        dialog.showOpenDialog({
-            properties: ['openFile', 'multiSelections']
-        }, function (files) {
-            if (files !== undefined) {
-                // handle files
-            }
-        });
+      dialog.showOpenDialog({
+        properties: ['openFile', 'multiSelections']
+      }, function (files) {
+        if (files !== undefined) {
+          // handle files
+        }
+      });
     });
   </script>
 </body>
+
 </html>
